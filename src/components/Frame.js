@@ -2,15 +2,21 @@ import classes from './Frame.module.css'
 
 function Frame(props){
 
-    const pixels = props.pixels.map((pixel)=>
-        <div class={classes.pixel} style={{backgroundColor: pixel.hue, opacity: pixel.opacity}}>
-
-        </div>
+    let thePixels = props.pixels.map((pixel, index)=>
+        <div className={classes.pixel} 
+        style={{backgroundColor: pixel.hue, opacity: pixel.opacity+'%'}} 
+        key={pixel.hue+index}
+        onClick={()=>props.onClick(0,index, 'black', 100)}
+        
+        ></div>
     );
 
-    return(
-        <div class={classes.frame}>
 
+    return(
+        <div className={classes.frame}>
+            {thePixels}
         </div>
     );
 }
+
+export default Frame;

@@ -1,9 +1,10 @@
 .frame{
     display: grid;
-    grid-template-columns: repeat(autofill, autofill );
+    grid-template-columns: repeat(auto-fill, 20px);
+    grid-template-rows: max-content;
 }
 
 .pixel{
-    width: 10;
-    height: 10;
+    width: 20px;
+    height: 20px;
 }
