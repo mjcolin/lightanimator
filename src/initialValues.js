@@ -13,6 +13,9 @@ const initValues =
     [
         {
           pixels: createBlankFrame(23)
+        },
+        {
+          pixels: createBlankFrame(23)
         }
     ]
   
