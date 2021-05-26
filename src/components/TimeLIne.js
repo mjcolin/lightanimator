@@ -1,4 +1,5 @@
 import Frame from './Frame'
+import classes from './TimeLine.module.css'
 
 function TimeLine(props){
     const theFrames = props.timeline.map((aFrame, index)=>
@@ -11,7 +12,7 @@ function TimeLine(props){
 
 
     return (
-        <div className="timeline">
+        <div className={classes.timeline}>
          {theFrames}
         </div>
 
