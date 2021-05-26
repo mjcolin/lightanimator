@@ -1,12 +1,18 @@
-.frame{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 20px);
-    grid-template-rows: max-content;
-    column-gap: 4px;
+:root{
+    --width: 20px;
 }
 
+.frame{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, var(--width));
+    grid-template-rows: max-content;
+    column-gap: 4px;
+    width: auto;
+    padding: 5px;
+
+}
 .pixel{
-    width: 20px;
-    height: 20px;
+    width: var(--width);
+    height: var(--width);
     border: 1px double black;
 }
