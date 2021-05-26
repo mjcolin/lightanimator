@@ -1,12 +1,18 @@
+export function createBlankFrame(cols){
+  let theInitialArray = new Array(cols);
+
+  for(let i=0; i< cols ;i++){
+    theInitialArray[i]= {hue: 'black', opacity: 100};
+  }
+
+  return theInitialArray;
+}
+
+
 const initValues = 
     [
         {
-          pixels: [ {hue: 'red', opacity: 50},
-                    {hue: 'blue', opacity: 90},
-                    {hue: 'red', opacity: 100},
-                    {hue: 'cyan', opacity: 10},
-                    {hue: 'red', opacity: 100},
-                    {hue: 'red', opacity: 100}  ]
+          pixels: createBlankFrame(23)
         }
     ]
   

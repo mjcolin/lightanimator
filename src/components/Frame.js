@@ -6,7 +6,7 @@ function Frame(props){
         <div className={classes.pixel} 
         style={{backgroundColor: pixel.hue, opacity: pixel.opacity+'%'}} 
         key={pixel.hue+index}
-        onClick={()=>props.onClick(0,index, 'black', 100)}
+        onClick={()=>props.onClick(0,index, 'yellow', 100)}
         
         ></div>
     );

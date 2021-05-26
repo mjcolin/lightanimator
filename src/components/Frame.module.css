@@ -2,9 +2,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 20px);
     grid-template-rows: max-content;
+    column-gap: 4px;
 }
 
 .pixel{
     width: 20px;
     height: 20px;
+    border: 1px double black;
 }

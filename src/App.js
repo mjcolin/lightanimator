@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState } from 'react';
 import initialValues from './initialValues'
 
-import Frame from './components/Frame'
+import TimeLine from './components/TimeLine'
 function App() {
 
   const [timeline, setTimeline] = useState(initialValues);
@@ -20,17 +20,12 @@ function setPixelForFrame(frameNumber, pixelNumber, hue, opacity){
     setTimeline(newTimeline);
 }
 
-const theFrames = timeline.map((aFrame, index)=>
-  <Frame pixels = {aFrame.pixels} frame={index} onClick={setPixelForFrame} key={index} />
-);
 
 
   return (
     <div className="App">
       Frame should be here
-      <div className="timeline">
-      {theFrames}
-      </div>
+     <TimeLine timeline={timeline} onClick={setPixelForFrame} />
     </div>
   );
 }
