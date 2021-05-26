@@ -16,10 +16,14 @@ function Frame(props){
 
 
     return(
-        <div className={classes.frame}>
-            {thePixels}
+        <div>
+            <div className={classes.frame}>
+                {thePixels}
+                <button onClick={()=>props.deleteFrame(props.frame)}>-</button>
+            </div>
+           
         </div>
-    );
+    )
 }
 
 export default Frame;

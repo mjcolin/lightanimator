@@ -1,7 +1,8 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import initialValues from './initialValues'
+import initialValues from './initialValues';
+import {createBlankFrame} from './initialValues';
 
 import TimeLine from './components/TimeLine'
 function App() {
@@ -20,12 +21,30 @@ function setPixelForFrame(frameNumber, pixelNumber, hue, opacity){
     setTimeline(newTimeline);
 }
 
+function addFrame(){
+  console.log('add frame pushed');
+  const newTimeline = timeline.slice();
+  const blankPixels = createBlankFrame(23);
+
+  newTimeline.push({pixels: blankPixels});
+
+  setTimeline(newTimeline);
+
+}
+
+function deleteFrame(frameNumber){
+  const newTimeline = timeline.slice();
+  delete newTimeline[frameNumber];
+
+  setTimeline(newTimeline);
+}
+
 
 
   return (
     <div className="App">
       Frame should be here
-     <TimeLine timeline={timeline} onClick={setPixelForFrame} />
+     <TimeLine timeline={timeline} onClick={setPixelForFrame} addButtonClick={addFrame} deleteFrame={deleteFrame}/>
     </div>
   );
 }

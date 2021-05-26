@@ -2,5 +2,11 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(auto-fill, 20px);
-    row-gap: 20px;
+    row-gap: 30px;
+    width: auto;
+}
+
+.addButton{
+    display: flex;
+    justify-content: center;
 }
