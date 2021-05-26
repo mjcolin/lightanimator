@@ -5,6 +5,8 @@ import initialValues from './initialValues';
 import {createBlankFrame} from './initialValues';
 
 import TimeLine from './components/TimeLine'
+import Preview from './components/Preview'
+
 function App() {
 
   const [timeline, setTimeline] = useState(initialValues);
@@ -43,7 +45,11 @@ function deleteFrame(frameNumber){
 
   return (
     <div className="App">
-      Frame should be here
+      <div>
+        <h2>Preview</h2>
+        <Preview frames = {timeline} />
+      </div>
+      <h2>Timeline</h2>
      <TimeLine timeline={timeline} onClick={setPixelForFrame} addButtonClick={addFrame} deleteFrame={deleteFrame}/>
     </div>
   );
