@@ -7,10 +7,6 @@ function TimeLine(props){
     );
   
 
-
-
-
-
     return (
         <div>
         <div className={classes.timeline}>
