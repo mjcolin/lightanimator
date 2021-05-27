@@ -21,15 +21,11 @@ function Frame(props){
          );
     }
 
-
     return(
-        <div>
             <div className={classes.frame}>
                 {thePixels}
                 <button onClick={()=>props.deleteFrame(props.frame)}>-</button>
             </div>
-           
-        </div>
     )
 }
 
