@@ -1,9 +1,8 @@
 .timeline{
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(auto-fill, 20px);
-    row-gap: 30px;
-    width: auto;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(auto-fill, 25px);
+    row-gap: 10px;
 }
 
 .addButton{
