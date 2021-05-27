@@ -35,8 +35,9 @@ function addFrame(){
 }
 
 function deleteFrame(frameNumber){
+
   const newTimeline = timeline.slice();
-   newTimeline.splice(frameNumber,1);
+  newTimeline.splice(frameNumber,1);
 
   setTimeline(newTimeline);
 }

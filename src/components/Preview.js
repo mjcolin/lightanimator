@@ -4,6 +4,7 @@ import {useState} from 'react'
 function Preview(props){
     const [currentFrame, setCurrentFrame] =useState(props.frames[0].pixels);
     const [previewID, setPreviewID] =useState(0);
+    const [frameRate, setFrameRate] =useState(100);
 
     
     function startPreviewAnimation(){
@@ -11,7 +12,7 @@ function Preview(props){
         var frameNumber = 0;
 
         clearInterval(previewID)
-        let aPreviewID = setInterval(tick, 100);
+        let aPreviewID = setInterval(tick, frameRate);
         setPreviewID(aPreviewID);
 
         function tick(){
@@ -26,9 +27,10 @@ function Preview(props){
             }
             else{
                // console.log('updating frame')
-                
-                setCurrentFrame(props.frames[frameNumber].pixels);
-                frameNumber++;
+                if(props.frames[frameNumber] != null){
+                    setCurrentFrame(props.frames[frameNumber].pixels);
+                    frameNumber++;
+                }
             }
         }
 
@@ -39,12 +41,19 @@ function Preview(props){
         clearInterval(previewID);
     }
 
+    function updateFrameRate(e){
+        console.log(e.target.value);
+        setFrameRate(e.target.value);
+        stopPreviewAnimation();
+    }
+
 
     return(
         <div>
          <Frame pixels={currentFrame} />
          <button onClick={startPreviewAnimation}>Play</button>
          <button onClick={stopPreviewAnimation}>Stop</button>
+         <input type="text" id="frameRate" value={frameRate} onChange={updateFrameRate}></input>
         </div>
     );
 }
