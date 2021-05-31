@@ -5,14 +5,14 @@
 .frame{
     display: grid;
     grid-template-columns: repeat(auto-fit, var(--width));
-    grid-template-rows: max-content;
     column-gap: 4px;
     width: auto;
-    padding: 5px;
-
+    padding: 3px;
+    border: 2px dotted rgb(163, 163, 165);
 }
 .pixel{
     width: var(--width);
     height: var(--width);
     border: 1px double black;
+    border-radius: 50%;
 }
