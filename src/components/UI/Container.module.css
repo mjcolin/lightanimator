@@ -8,11 +8,13 @@
     border-left: none;
     width: auto;
     height: auto;
-    background-color: rgb(177, 176, 176);
+    background-color: rgb(44, 42, 42);
+    color: white;
+    
 }
 
 .container h2{
     margin: 0px;
     padding: 5px;
-
+    color: white;
 }
