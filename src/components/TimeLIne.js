@@ -1,6 +1,6 @@
-import Frame from './Frame'
+import Frame from './Frame.js'
 import classes from './TimeLine.module.css'
-import Container from './UI/Container'
+import Container from './UI/Container.js'
 
 function TimeLine(props){
     const theFrames = props.timeline.map((aFrame, index)=>

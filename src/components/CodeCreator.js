@@ -1,5 +1,5 @@
 import classes from "./CodeCreator.module.css";
-import Container from "./UI/Container"
+import Container from "./UI/Container.js"
 import {useState} from 'react'
 
 function CodeCreator(props){

@@ -1,12 +1,12 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import initialValues from './initialValues';
-import {createBlankFrame} from './initialValues';
+import initialValues from './initialValues.js';
+import {createBlankFrame} from './initialValues.js';
 
-import TimeLine from './components/TimeLine'
-import Preview from './components/Preview'
-import CodeCreator from './components/CodeCreator'
+import TimeLine from './components/TimeLine.js'
+import Preview from './components/Preview.js'
+import CodeCreator from './components/CodeCreator.js'
 
 function App() {
 
