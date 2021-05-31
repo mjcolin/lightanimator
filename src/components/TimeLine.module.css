@@ -1,11 +1,19 @@
 .timeline{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: max-content;
     grid-template-rows: repeat(auto-fill, 25px);
-    row-gap: 10px;
+    row-gap: 5px;
+    overflow-y: scroll;
+    grid-auto-columns: max-content;
 }
 
 .addButton{
     display: flex;
     justify-content: center;
+}
+
+.container{
+    display: inline-block;
+    border: 1px double gray;
+    padding: 10px;
 }

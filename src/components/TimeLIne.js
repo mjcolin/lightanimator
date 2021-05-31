@@ -1,5 +1,6 @@
 import Frame from './Frame'
 import classes from './TimeLine.module.css'
+import Container from './UI/Container'
 
 function TimeLine(props){
     const theFrames = props.timeline.map((aFrame, index)=>
@@ -8,14 +9,15 @@ function TimeLine(props){
   
 
     return (
-        <div>
+        <Container>
+            <h2>Timeline</h2>
         <div className={classes.timeline}>
          {theFrames}
         </div>
         <div className={classes.addButton}>
             <button onClick={props.addButtonClick}>+</button>
         </div>
-       </div>
+        </Container>
 
     );
 }
