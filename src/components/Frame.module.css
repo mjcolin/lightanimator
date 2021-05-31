@@ -9,6 +9,7 @@
     width: auto;
     padding: 3px;
     border: 2px dotted rgb(163, 163, 165);
+    background-color: whitesmoke;
 }
 .pixel{
     width: var(--width);

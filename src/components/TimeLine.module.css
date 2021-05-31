@@ -1,7 +1,7 @@
 .timeline{
     display: grid;
     grid-template-columns: max-content;
-    grid-template-rows: repeat(auto-fill, 25px);
+    grid-template-rows: repeat(auto-fill);
     row-gap: 5px;
     overflow-y: scroll;
     grid-auto-columns: max-content;
