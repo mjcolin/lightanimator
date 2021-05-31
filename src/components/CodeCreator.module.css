@@ -1,0 +1,8 @@
+.code{
+    width: 100%;
+    overflow: scroll;
+}
+
+textarea{
+    overflow: scroll;
+}

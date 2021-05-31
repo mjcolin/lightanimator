@@ -6,6 +6,7 @@ import {createBlankFrame} from './initialValues';
 
 import TimeLine from './components/TimeLine'
 import Preview from './components/Preview'
+import CodeCreator from './components/CodeCreator'
 
 function App() {
 
@@ -46,12 +47,14 @@ function deleteFrame(frameNumber){
 
   return (
     <div className="App">
-      <div>
-        <h2>Preview</h2>
+      <div className="bottomSection">
         <Preview frames = {timeline} />
+        
       </div>
-      <h2>Timeline</h2>
-     <TimeLine timeline={timeline} onClick={setPixelForFrame} addButtonClick={addFrame} deleteFrame={deleteFrame}/>
+      <div className="topSection">
+      <TimeLine timeline={timeline} onClick={setPixelForFrame} addButtonClick={addFrame} deleteFrame={deleteFrame}/>
+      <CodeCreator frames = {timeline} />
+      </div>
     </div>
   );
 }
