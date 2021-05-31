@@ -1,0 +1,6 @@
+.container{
+    display: inline-block;
+    width: auto;
+    border: 1px double grey;
+    padding: 10px;
+}

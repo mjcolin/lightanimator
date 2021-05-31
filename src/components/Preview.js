@@ -1,11 +1,11 @@
 import Frame from './Frame'
+import Container from './UI/Container'
 import {useState} from 'react'
 
 function Preview(props){
     const [currentFrame, setCurrentFrame] =useState(props.frames[0].pixels);
     const [previewID, setPreviewID] =useState(0);
     const [frameRate, setFrameRate] =useState(100);
-
     
     function startPreviewAnimation(){
         
@@ -49,12 +49,14 @@ function Preview(props){
 
 
     return(
-        <div>
+        <Container>
+         <h2>Preview</h2>
          <Frame pixels={currentFrame} />
+
          <button onClick={startPreviewAnimation}>Play</button>
          <button onClick={stopPreviewAnimation}>Stop</button>
          <input type="text" id="frameRate" value={frameRate} onChange={updateFrameRate}></input>
-        </div>
+        </Container>
     );
 }
 
