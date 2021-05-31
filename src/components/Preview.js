@@ -1,5 +1,5 @@
-import Frame from './Frame'
-import Container from './UI/Container'
+import Frame from './Frame.js'
+import Container from './UI/Container.js'
 import {useState} from 'react'
 
 function Preview(props){
