@@ -11,6 +11,8 @@ function Frame(props){
 
     let thePixels = null;
     let deleteButton = null;
+    let frameNumber = null;
+    let theStyle = {};
 
     if(props.onClick != null){
          thePixels = props.pixels.map((pixel, index)=>
@@ -22,6 +24,8 @@ function Frame(props){
          );
 
           deleteButton = <button onClick={()=>props.deleteFrame(props.frame)}>-</button>
+          frameNumber = props.frame +1;
+          theStyle = {width: calculatedFramwWidth, columnGap:pixelGap};
     }
     else{
         //no click handler
@@ -30,11 +34,12 @@ function Frame(props){
         style={{backgroundColor: pixel.hue, opacity: pixel.opacity+'%',width: pixelWidth, height: pixelWidth}} 
         key={pixel.hue+index}></div>
          );
+         theStyle = {width: (pixelWidth+pixelGap)*numberOfPixes, columnGap:pixelGap};
     }
 
     return(
-            <div className={classes.frame} style={{width: calculatedFramwWidth, columnGap:pixelGap}}>
-                {props.frame}
+            <div className={classes.frame} style={theStyle}>
+                {frameNumber}
                 {thePixels}
                 {deleteButton}
             </div>
