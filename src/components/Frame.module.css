@@ -11,6 +11,8 @@
     /*border: 2px dotted rgb(163, 163, 165);*/
     background-color: whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: black;
+    font-weight: bolder;
 
 }
 .pixel{
