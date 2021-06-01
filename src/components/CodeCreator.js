@@ -1,5 +1,6 @@
 import classes from "./CodeCreator.module.css";
 import Container from "./UI/Container.js"
+import Button from "./UI/Button.js"
 import {useState} from 'react'
 
 function CodeCreator(props){
@@ -83,7 +84,7 @@ function CodeCreator(props){
         <Container backgoundColor="cyan">
         <div className={classes.CodeCreator}>
             <div className={classes.controls}>
-                <button onClick={generateCode}>Generate Code</button>
+                <Button onClick={generateCode}>Generate Code</Button>
                 <p>Below is the code you will copy into the arduino platform</p>
             </div>
             <div className={classes.code}>

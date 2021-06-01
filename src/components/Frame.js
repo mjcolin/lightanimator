@@ -1,4 +1,5 @@
 import classes from './Frame.module.css'
+import Button from './UI/Button.js'
 
 function Frame(props){
     const pixelWidth = 20;
@@ -23,9 +24,9 @@ function Frame(props){
         ></div>
          );
 
-          deleteButton = <button onClick={()=>props.deleteFrame(props.frame)}>-</button>
+          deleteButton = <Button onClick={()=>props.deleteFrame(props.frame)} backColor="#B22222">-</Button>
           frameNumber = props.frame +1;
-          theStyle = {width: calculatedFramwWidth, columnGap:pixelGap};
+          theStyle = {width: calculatedFramwWidth, columnGap:pixelGap, cursor:'pointer'};
     }
     else{
         //no click handler
