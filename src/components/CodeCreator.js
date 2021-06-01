@@ -11,7 +11,6 @@ function CodeCreator(props){
     const [showExpandedCode, setExpandedCode] = useState(false);
     const textAreaRef = useRef(null);
 
-    const modal = ()=>{<Modal>{arduinoCode}</Modal>}
 
     function generateCode(){
         //pre: takes led animation
