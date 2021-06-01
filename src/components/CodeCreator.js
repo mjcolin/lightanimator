@@ -1,12 +1,17 @@
 import classes from "./CodeCreator.module.css";
 import Container from "./UI/Container.js"
 import Button from "./UI/Button.js"
+import Modal from './UI/Modal.js'
+
 import {useRef, useState} from 'react'
 
 function CodeCreator(props){
     const [arduinoCode, setArduinoCode] = useState("This is Where the Code Will Go");
     const [textAreaRows, setTextAreaRows] = useState(20);
+    const [showExpandedCode, setExpandedCode] = useState(false);
     const textAreaRef = useRef(null);
+
+    const modal = ()=>{<Modal>{arduinoCode}</Modal>}
 
     function generateCode(){
         //pre: takes led animation
@@ -84,8 +89,15 @@ function CodeCreator(props){
         //copy's the code to clipboard
         textAreaRef.current.select();
         document.execCommand('copy');
+    }
 
+    function expandCode(){
+        //creates modal of code
+        setExpandedCode(true);
+    }
 
+    function closeExpandedView(){
+        setExpandedCode(false);
     }
 
     return (
@@ -94,7 +106,7 @@ function CodeCreator(props){
             <div className={classes.controls}>
                 <Button onClick={generateCode}>Generate Code</Button>
                 <Button onClick={copyCode}>Copy Code</Button>
-                
+                <button onClick={expandCode}>Expand Code</button>
             </div>
             <div className={classes.code}>
             <p>Below is the code you will copy into the arduino platform</p>
@@ -103,6 +115,8 @@ function CodeCreator(props){
                 </textarea>
             </div>
         </div>
+
+        {showExpandedCode && <Modal onClick={closeExpandedView}><Button onClick={copyCode}>Copy Code</Button><textarea>{arduinoCode}</textarea></Modal>}
         </Container>
     );
 
