@@ -14,5 +14,9 @@
     .smallRoundButton:active {
         background-color:grey;
     }
+
+    .smallRoundButton:hover {
+        opacity: 70%;
+    }
     
 
