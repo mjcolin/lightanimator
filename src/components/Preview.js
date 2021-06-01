@@ -1,12 +1,14 @@
 import Frame from './Frame.js'
 import Container from './UI/Container.js'
 import {useState} from 'react'
+import classes from './Preview.module.css';
+import Button from './UI/Button.js'
 
 function Preview(props){
     const [currentFrame, setCurrentFrame] =useState(props.frames[0].pixels);
     const [previewID, setPreviewID] =useState(0);
-    //const [frameRate, setFrameRate] =useState(100);
-    let frameRate = props.frameRate;
+    
+    const frameRate = props.frameRate;
 
     function setFrameRate(aValue){
         props.updateFrameRate(aValue);
@@ -47,8 +49,10 @@ function Preview(props){
     }
 
     function updateFrameRate(e){
-        console.log(e.target.value);
-        setFrameRate(e.target.value);
+        const framesPerSecond = e.target.value;
+
+        //convert to milliseconds delay
+        setFrameRate(1000/framesPerSecond);
         stopPreviewAnimation();
     }
 
@@ -57,10 +61,14 @@ function Preview(props){
         <Container>
          <h2>Preview</h2>
          <Frame pixels={currentFrame} />
-
-         <button onClick={startPreviewAnimation}>Play</button>
-         <button onClick={stopPreviewAnimation}>Stop</button>
-         <input type="text" id="frameRate" value={frameRate} onChange={updateFrameRate}></input>
+         <div className={classes.controls}>
+            <Button onClick={startPreviewAnimation}>Play</Button>
+            <Button onClick={stopPreviewAnimation} backColor="red">Stop</Button>
+            <div className={classes.controlItem}>
+                <label>Frames Per a Second</label>
+                <input type="number" id="frameRate" value={1000/frameRate} onChange={updateFrameRate}></input>
+            </div>
+         </div>
         </Container>
     );
 }

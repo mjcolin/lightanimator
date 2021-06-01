@@ -4,3 +4,16 @@
     border: 1px double grey;
     padding: 10px;
 }
+
+.controls{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-content: center;
+}
+
+.controlItem{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
