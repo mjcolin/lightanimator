@@ -5,7 +5,7 @@ function Frame(props){
     const pixelWidth = 20;
     const numberOfPixes = props.pixels.length;
     const pixelGap = 4;
-    const buttonWidth = 30;
+    const buttonWidth = 0;
     const frameNumberWidth = 20;
 
     const calculatedFramwWidth = frameNumberWidth+(pixelWidth+pixelGap)*numberOfPixes+buttonWidth;
@@ -41,12 +41,14 @@ function Frame(props){
     }
 
     return(
-            <div className={classes.frame} style={theStyle}>
-                {frameNumber}
-                {thePixels}
+            <div className={classes.frameContainer}>
+                <div className={classes.frame} style={theStyle}>
+                    {frameNumber}
+                    {thePixels}
+                </div>
                 {deleteButton}
-            </div>
-    )
+          </div>
+    );
 }
 
 export default Frame;

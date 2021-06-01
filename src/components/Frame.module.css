@@ -9,8 +9,8 @@
     width: auto;
     padding: 3px;
     /*border: 2px dotted rgb(163, 163, 165);*/
-    background-color: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /*background-color: whitesmoke;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
     color: black;
     font-weight: bolder;
 
@@ -20,4 +20,15 @@
     height: var(--width);
     border: 1px double black;
     border-radius: 50%;
+}
+
+.frameContainer{
+    display: grid;
+    grid-template-columns: auto 40px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.deletButton{
+    margin: 5px;
 }
