@@ -23,8 +23,10 @@ function Frame(props){
         onClick={()=>props.onClick(props.frame,index, (pixel.hue === 'yellow') ? 'black' : 'yellow', 100)}
         ></div>
          );
-
-          deleteButton = <Button onClick={()=>props.deleteFrame(props.frame)} backColor="#B22222">-</Button>
+          
+          if(props.frame !== 0)//don't show delete on frame 0 as will cause error if no frames
+            deleteButton = <Button onClick={()=>props.deleteFrame(props.frame)} backColor="red">-</Button>
+          
           frameNumber = props.frame +1;
           theStyle = {width: calculatedFramwWidth, columnGap:pixelGap, cursor:'pointer'};
     }
