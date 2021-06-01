@@ -6,3 +6,8 @@
 textarea{
     overflow: scroll;
 }
+
+.controls{
+    display: flex;
+    justify-content: space-around;
+}

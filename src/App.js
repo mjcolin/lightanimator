@@ -11,6 +11,8 @@ import CodeCreator from './components/CodeCreator.js'
 function App() {
 
   const [timeline, setTimeline] = useState(initialValues);
+  const [frameRate, setFrameRate] =useState(100);
+
 
 function setPixelForFrame(frameNumber, pixelNumber, hue, opacity){
     const newTimeline = timeline.slice();
@@ -43,17 +45,20 @@ function deleteFrame(frameNumber){
   setTimeline(newTimeline);
 }
 
+function updateFrameRate(aFrameRate){
+  setFrameRate(aFrameRate);
+}
 
 
   return (
     <div className="App">
       <div className="bottomSection">
-        <Preview frames = {timeline} />
+        <Preview frames = {timeline} frameRate={frameRate} updateFrameRate={updateFrameRate}/>
         
       </div>
       <div className="topSection">
       <TimeLine timeline={timeline} onClick={setPixelForFrame} addButtonClick={addFrame} deleteFrame={deleteFrame}/>
-      <CodeCreator frames = {timeline} />
+      <CodeCreator frames = {timeline} frameRate={frameRate} />
       </div>
     </div>
   );

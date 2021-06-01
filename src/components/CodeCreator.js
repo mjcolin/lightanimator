@@ -1,12 +1,13 @@
 import classes from "./CodeCreator.module.css";
 import Container from "./UI/Container.js"
 import Button from "./UI/Button.js"
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 
 function CodeCreator(props){
     const [arduinoCode, setArduinoCode] = useState("This is Where the Code Will Go");
     const [textAreaRows, setTextAreaRows] = useState(20);
-    
+    const textAreaRef = useRef(null);
+
     function generateCode(){
         //pre: takes led animation
         //pre: outputs arduino code using FASTLED Library 
@@ -23,7 +24,7 @@ function CodeCreator(props){
     function generateLoopCode(){
         let newCode = "\n\nvoid newPattern(){\n"; //open function
 
-        newCode = newCode.concat("//This function runs in the loop and displays one frame\n\n")
+        newCode = newCode.concat("//This function needs to run in main loop and displays one frame at a time\n\n")
         newCode = newCode.concat(`\tfor(int i=0;i<${props.frames[0].pixels.length};i++){\n`); //open for loop
         const ledCode = 
         `\t\tif(frames[currentFrameNumber][i] == "on"){
@@ -37,7 +38,7 @@ function CodeCreator(props){
 
         newCode = newCode.concat('\t}\n');//close for loop
         //add delay
-        newCode = newCode.concat(`\tdelay(100);//This is the default delay and not from preview`);
+        newCode = newCode.concat(`\tdelay(${props.frameRate});`);
         newCode = newCode.concat('\tcurrentFrameNumber++;\n');
 
 
@@ -52,7 +53,7 @@ function CodeCreator(props){
         const frames = props.frames;
         //Create frames as arduino code array
         let arrayOfFramesArduinoCode = 
-        `//The following variable frames stores all the frames for the led animation in an array \n \nString frames[${props.frames.length}][${props.frames[0].pixels.length}]={`;
+        `//frames for the led animation in an array\nString frames[${props.frames.length}][${props.frames[0].pixels.length}]={`;
         for(let i=0;i<frames.length;i++){
             const currentFrame = frames[i];
             //console.log('the current frame pixels is '+currentFrame.pixels);
@@ -79,16 +80,25 @@ function CodeCreator(props){
        
     }
 
+    function copyCode(){
+        //copy's the code to clipboard
+        textAreaRef.current.select();
+        document.execCommand('copy');
+
+
+    }
 
     return (
         <Container backgoundColor="cyan">
         <div className={classes.CodeCreator}>
             <div className={classes.controls}>
                 <Button onClick={generateCode}>Generate Code</Button>
-                <p>Below is the code you will copy into the arduino platform</p>
+                <Button onClick={copyCode}>Copy Code</Button>
+                
             </div>
             <div className={classes.code}>
-                <textarea readOnly value={arduinoCode} rows={textAreaRows} style={{width:'100%', height: '100%'}}>
+            <p>Below is the code you will copy into the arduino platform</p>
+                <textarea readOnly value={arduinoCode} rows={textAreaRows} style={{width:'100%', height: '100%'}} ref={textAreaRef}>
                     {arduinoCode}
                 </textarea>
             </div>

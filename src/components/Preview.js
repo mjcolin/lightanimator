@@ -5,7 +5,12 @@ import {useState} from 'react'
 function Preview(props){
     const [currentFrame, setCurrentFrame] =useState(props.frames[0].pixels);
     const [previewID, setPreviewID] =useState(0);
-    const [frameRate, setFrameRate] =useState(100);
+    //const [frameRate, setFrameRate] =useState(100);
+    let frameRate = props.frameRate;
+
+    function setFrameRate(aValue){
+        props.updateFrameRate(aValue);
+    }
     
     function startPreviewAnimation(){
         
