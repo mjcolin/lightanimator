@@ -1,6 +1,5 @@
 .code{
     width: 100%;
-    overflow: scroll;
 }
 
 textarea{
@@ -24,4 +23,5 @@ textarea{
     box-sizing: border-box;
     height: 95%;
     width: 95%;
+    overflow: scroll;
 }
