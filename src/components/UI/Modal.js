@@ -5,12 +5,18 @@ function Modal(props){
 
     return(
         <div>
-            <div className={classes.overlay} onClick={props.onClick}></div>
+            <div className={classes.overlay} onClick={props.close}></div>
             <div className={classes.modal}>
+                <div className={classes.header}>
+                    <h2>{props.title}</h2>
+                    <div className={classes.closebutton}>
+                        <Button onClick={props.close} backColor="red">x</Button>
+                    </div>
+                </div>
+               
                 {props.children}
-                <Button onClick={props.onClick}>Close</Button>
-            </div>
-            
+                
+            </div>  
         </div>
     )
 

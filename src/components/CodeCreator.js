@@ -99,6 +99,7 @@ function CodeCreator(props){
         setExpandedCode(false);
     }
 
+
     return (
         <Container backgoundColor="cyan">
         <div className={classes.CodeCreator}>
@@ -115,7 +116,15 @@ function CodeCreator(props){
             </div>
         </div>
 
-        {showExpandedCode && <Modal onClick={closeExpandedView}><Button onClick={copyCode}>Copy Code</Button><textarea>{arduinoCode}</textarea></Modal>}
+        {showExpandedCode && 
+            <Modal close={closeExpandedView} title="Code Generator">
+             <div className={classes.modalBody}>
+                <div style={{width: '200px'}}>
+                    <Button onClick={copyCode}>Copy Code</Button>
+                </div>
+                <textarea readOnly value={arduinoCode}></textarea>
+            </div>
+            </Modal>}
         </Container>
     );
 

@@ -1,27 +1,31 @@
+.closebutton {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 
-    .modal {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        right: 40px;
-        bottom: 40px;
-        background-color: black;
-      }
-    
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgb(75, 75, 77);
-        opacity: 30%;
-      }
+.header{
+  position: relative;
+}
 
-      textarea{
-        -moz-box-sizing: border-box;
-             box-sizing: border-box;
-             height: 100%;
-      }
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background-color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(75, 75, 77);
+  opacity: 30%;
+}

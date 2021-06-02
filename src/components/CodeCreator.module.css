@@ -11,3 +11,17 @@ textarea{
     display: flex;
     justify-content: space-around;
 }
+
+.modalBody{
+    display:grid;
+    grid-template-rows: 40px auto;
+    height: 100%;
+    justify-items: center;
+}
+
+.modalBody textarea{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 95%;
+    width: 95%;
+}
