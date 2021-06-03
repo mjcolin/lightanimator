@@ -61,6 +61,16 @@ function Preview(props){
         <Container>
          <h2>Preview</h2>
          <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
+         <Frame pixels={currentFrame} />
          <div className={classes.controls}>
             <Button onClick={startPreviewAnimation}>Play</Button>
             <Button onClick={stopPreviewAnimation} backColor="red">Stop</Button>
