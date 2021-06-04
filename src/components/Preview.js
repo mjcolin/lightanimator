@@ -23,17 +23,11 @@ function Preview(props){
         setPreviewID(aPreviewID);
 
         function tick(){
-           
-            //const newFrameNumber = currentFrameNum+1;
-            //setCurrentFrameNum(currentFrameNum+1);
             
-           // console.log('tick called for frame: '+frameNumber);
             if (frameNumber >= props.frames.length){
-                //console.log('interval should be canceld')
                 frameNumber = 0;
             }
             else{
-               // console.log('updating frame')
                 if(props.frames[frameNumber] != null){
                     setCurrentFrame(props.frames[frameNumber].pixels);
                     frameNumber++;
