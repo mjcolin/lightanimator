@@ -81,7 +81,7 @@ function hideHelpModal(){
                   <li>Preview the animation by clicking on play</li>
                   <li>Change the speed of the animation by changing the framerate</li>
                   <li>Once happy with the animation generate the arduino code for the animation by clicking generate code.</li>
-                  <li>This code can then be pasted into the template (not provided yet) and uploaded to the arduino on the board to run.</li>
+                  <li>This code can then be pasted into the template (not provided yet) and uploaded to the arduino.</li>
               </ul>
             </div>
             </Modal>}
