@@ -24,6 +24,7 @@ function Preview(props){
     }
 
     function tick(){
+        //This method animates preivew and is called at the framerate
         if(playing){
             const frames = props.frames;
             const frameNumber = currentFrameNumber;
@@ -48,7 +49,6 @@ function Preview(props){
         const framesPerSecond = e.target.value;
         //convert to milliseconds delay
         setFrameRate(1000/framesPerSecond);
-        //stopPreviewAnimation();
     }
 
 
