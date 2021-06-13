@@ -72,9 +72,17 @@ function hideHelpModal(){
       </div>
 
       {showHelp && 
-            <Modal close={hideHelpModal} title="Help" hasClass={false}>
-             <div>
-                This app allows you to create custom animations for the dream wall. Add frames and and turn colums of lights on and off to create custom animations.
+            <Modal close={hideHelpModal} title="Help" hasClass={true}>
+             <div className="helpSection">
+              <p>This app allows you to visually create LED animations for the Dream Wall Interactive Art Installation.</p>
+              <ul>
+                  <li>Create the light animations by adding or removing frames </li>
+                  <li>Edit which columns are on or off by clicking that column on the frame.</li>
+                  <li>Preview the animation by clicking on play</li>
+                  <li>Change the speed of the animation by changing the framerate</li>
+                  <li>Once happy with the animation generate the arduino code for the animation by clicking generate code.</li>
+                  <li>This code can then be pasted into the template (not provided yet) and uploaded to the arduino on the board to run.</li>
+              </ul>
             </div>
             </Modal>}
     </div>

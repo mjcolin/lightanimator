@@ -18,3 +18,13 @@
   top: 2px;
 }
 
+.helpSection{
+  color: white;
+  padding: 10px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18pt;
+}
+
+.helpSection li{
+  text-align: left;
+}
