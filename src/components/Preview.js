@@ -51,10 +51,10 @@ function Preview(props){
         setFrameRate(1000/framesPerSecond);
     }
 
-
     return(
         <Container>
          <h2>Preview</h2>
+         
          <Frame pixels={currentFrame} />
          <Frame pixels={currentFrame} />
          <Frame pixels={currentFrame} />
@@ -76,6 +76,8 @@ function Preview(props){
             </div>
          </div>
         </Container>
+
+        
     );
 }
 

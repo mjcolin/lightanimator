@@ -11,3 +11,10 @@
 .bottomSection{
   width: auto;
 }
+
+.helpButton{
+  position: absolute;
+  right:2px;
+  top: 2px;
+}
+

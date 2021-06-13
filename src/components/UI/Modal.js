@@ -2,6 +2,13 @@ import classes from './Modal.module.css'
 import Button from './Button.js'
 function Modal(props){
 
+    let body = props.children;
+    
+    if(props.hasClass === false){
+        body = <div style={{color: 'white', padding: '10px'}}>
+                {props.children}
+            </div>
+    }
 
     return(
         <div>
@@ -13,8 +20,7 @@ function Modal(props){
                         <Button onClick={props.close} backColor="red">x</Button>
                     </div>
                 </div>
-               
-                {props.children}
+               {body}
                 
             </div>  
         </div>

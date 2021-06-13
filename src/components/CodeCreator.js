@@ -118,7 +118,7 @@ function CodeCreator(props){
         </div>
 
         {showExpandedCode && 
-            <Modal close={closeExpandedView} title="Code Generator">
+            <Modal close={closeExpandedView} title="Code Generator" hasClass={true}>
              <div className={classes.modalBody}>
                 <div style={{width: '200px'}}>
                     <Button onClick={copyCode}>Copy Code</Button>
