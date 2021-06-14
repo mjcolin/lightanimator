@@ -9,6 +9,8 @@ import Preview from './components/Preview.js'
 import CodeCreator from './components/CodeCreator.js'
 import Button from './components/UI/Button.js'
 import Modal from './components/UI/Modal.js'
+import githublogo from './assets/GitHub-Mark-Light-32px.png'
+
 
 function App() {
 
@@ -57,10 +59,16 @@ function hideHelpModal(){
   setShowHelp(false);
 }
 
+function openGitHub(){
+  window.open('https://github.com/mjcolin/lightanimator','_blank');
+}
 
   return (
     <div className="App">
-      <div className="helpButton"><Button onClick={showHelpModal} backColor="grey">?</Button></div>
+      <div className="helpButton">
+        <Button onClick={showHelpModal} backColor="grey">?</Button>
+        <Button onClick={openGitHub} backColor='black'><img src={githublogo} alt="github" className="gitHubIcon"/></Button>
+      </div>
 
       <div className="bottomSection">
         <Preview frames = {timeline} frameRate={frameRate} updateFrameRate={updateFrameRate}/>

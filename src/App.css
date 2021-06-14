@@ -19,6 +19,7 @@
 }
 
 .helpSection{
+  display: flex;
   color: white;
   padding: 10px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -27,4 +28,9 @@
 
 .helpSection li{
   text-align: left;
+}
+
+.gitHubIcon{
+  width:10px;
+  height: 10px;
 }
