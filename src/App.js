@@ -80,7 +80,7 @@ function openGitHub(){
       </div>
 
       {showHelp && 
-            <Modal close={hideHelpModal} title="Help" hasClass={true}>
+            <Modal close={hideHelpModal} title="About" hasClass={true}>
              <div className="helpSection">
               <p>This app allows you to visually create LED animations for the Dream Wall Interactive Art Installation.</p>
               <ul>

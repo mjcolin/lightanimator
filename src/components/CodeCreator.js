@@ -105,7 +105,7 @@ function CodeCreator(props){
         <Container backgoundColor="cyan">
         <div className={classes.CodeCreator}>
             <div className={classes.controls}>
-                <Button onClick={generateCode}>Generate Code</Button>
+                <Button onClick={generateCode}>Generate Arduino Code</Button>
                 <Button onClick={copyCode}>Copy Code</Button>
                 <button onClick={expandCode}>Expand Code</button>
             </div>
