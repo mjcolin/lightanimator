@@ -44,7 +44,7 @@ function CodeCreator(props){
         newCode = newCode.concat('\t}\n');//close for loop
         //add delay
         newCode = newCode.concat(`\tdelay(${props.frameRate});`);
-        newCode = newCode.concat('\n\tcurrentFrameNumber++;\n');
+        newCode = newCode.concat(`\n\tcurrentFrameNumber=(currentFrameNumber+1)%${props.frames.length};\n`);
 
 
         newCode=newCode.concat("\n}");//closing function bracket
