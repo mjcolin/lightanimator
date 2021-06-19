@@ -42,9 +42,13 @@ function CodeCreator(props){
         newCode = newCode.concat(ledCode);
 
         newCode = newCode.concat('\t}\n');//close for loop
-        //add delay
-        newCode = newCode.concat(`\tdelay(${props.frameRate});`);
-        newCode = newCode.concat(`\n\tcurrentFrameNumber=(currentFrameNumber+1)%${props.frames.length};\n`);
+        //add threadded item to change currentFrameNumber by framerate
+
+        newCode = newCode.concat(`\tEVERY_N_MILLISECONDS(${props.frameRate}){
+                currentFrameNumber=(currentFrameNumber+1)%${props.frames.length};
+        }`)
+       // newCode = newCode.concat(`\tdelay(${props.frameRate});`);
+        //newCode = newCode.concat(`\n\tcurrentFrameNumber=(currentFrameNumber+1)%${props.frames.length};\n`);
 
 
         newCode=newCode.concat("\n}");//closing function bracket
