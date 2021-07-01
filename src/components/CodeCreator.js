@@ -28,14 +28,14 @@ function CodeCreator(props){
     
     function generateLoopCode(){
         let newCode = "\n\nvoid newPattern(){\n"; //open function
-
+        const numberOfColumns = props.frames[0].pixels.length;
         newCode = newCode.concat("//This function needs to run in main loop and displays one frame at a time\n\n")
-        newCode = newCode.concat(`\tfor(int i=0;i<${props.frames[0].pixels.length};i++){\n`); //open for loop
+        newCode = newCode.concat(`\tfor(int i=0;i<${numberOfColumns};i++){\n`); //open for loop
         const ledCode = 
-        `\t\tif(frames[currentFrameNumber][i] == true){
+        `\t\tif(frames[currentFrameNumber][${numberOfColumns-1}-i] == true){
         \t\tleds[i]=CRGB::White;//set Led to  white on
         \t}
-        \telse if(frames[currentFrameNumber][i] == false){
+        \telse if(frames[currentFrameNumber][${numberOfColumns-1}-i] == false){
             \t\tleds[i]=CRGB::Black; //set Led to black off
             \t}\n`
         
