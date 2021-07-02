@@ -15,7 +15,7 @@ import githublogo from './assets/GitHub-Mark-Light-32px.png'
 function App() {
 
   const [timeline, setTimeline] = useState(initialValues);
-  const [frameRate, setFrameRate] =useState(100);
+  const [frameRate, setFrameRate] =useState(200);
   const [showHelp, setShowHelp] =useState(false);
 
 
